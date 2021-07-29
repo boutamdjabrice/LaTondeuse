@@ -10,7 +10,9 @@ public class Tondeuse {
   int cordX;
   int cordY;
   Orientation orientation;
-  String Mouvement;
+  String mouvement;
 
-  public Tondeuse(){}
+  public Tondeuse() {
+  }
+
 }
