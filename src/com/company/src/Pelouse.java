@@ -7,6 +7,6 @@ import lombok.Setter;
 @Setter
 public class Pelouse {
 
-  int x;
-  int y;
+  int cordX;
+  int cordY;
 }

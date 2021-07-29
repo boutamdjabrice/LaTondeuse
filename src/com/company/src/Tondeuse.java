@@ -58,14 +58,26 @@ public class Tondeuse {
       position = Arrays.asList(this.cordX, this.cordY + 1);
       break;
     case OUEST:
-      position = Arrays.asList(this.cordX - 1, this.cordY);
-      break;
+      if (cordX == 0) {
+        position = Arrays.asList(this.cordX, this.cordY);
+        break;
+      }
+      else{
+        position = Arrays.asList(this.cordX - 1, this.cordY);
+        break;
+      }
     case EST:
       position = Arrays.asList(this.cordX + 1, this.cordY);
       break;
     case SUD:
-      position = Arrays.asList(this.cordX, this.cordY - 1);
-      break;
+      if (cordY == 0) {
+        position = Arrays.asList(this.cordX, this.cordY);
+        break;
+      }
+      else {
+        position = Arrays.asList(this.cordX, this.cordY - 1);
+        break;
+      }
     }
   }
 }
