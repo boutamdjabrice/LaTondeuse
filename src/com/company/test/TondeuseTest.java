@@ -7,6 +7,8 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.jupiter.api.BeforeEach;
 
+import java.util.Arrays;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 public class TondeuseTest extends TestCase {
@@ -32,6 +34,11 @@ public class TondeuseTest extends TestCase {
         tondeuse.setOrientation(Orientation.NORD);
         tondeuse.tournerVersLaDroite();
         assertEquals(Orientation.EST, tondeuse.getOrientation());
+    }
+
+    public void testAvancer(){
+        tondeuse.avancer();
+        assertEquals(Arrays.asList(1,1),tondeuse.getPosition());
     }
 
 }
