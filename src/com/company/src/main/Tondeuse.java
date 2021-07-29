@@ -1,5 +1,7 @@
-package com.company.src;
+package com.company.src.main;
 
+import com.company.src.main.Orientation;
+import com.company.src.main.Pelouse;
 import lombok.Getter;
 import lombok.Setter;
 
