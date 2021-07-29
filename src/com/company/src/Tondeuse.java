@@ -3,6 +3,7 @@ package com.company.src;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.Arrays;
 import java.util.List;
 
 @Getter
@@ -12,6 +13,7 @@ public class Tondeuse {
   int cordX;
   int cordY;
   Orientation orientation;
+  List<Integer> position;
 
   public Tondeuse() {
   }
@@ -50,4 +52,20 @@ public class Tondeuse {
     }
   }
 
+  public void avancer() {
+    switch (orientation){
+    case NORD:
+      position = Arrays.asList(this.cordX, this.cordY + 1);
+      break;
+    case OUEST:
+      position = Arrays.asList(this.cordX - 1, this.cordY);
+      break;
+    case EST:
+      position = Arrays.asList(this.cordX + 1, this.cordY);
+      break;
+    case SUD:
+      position = Arrays.asList(this.cordX, this.cordY - 1);
+      break;
+    }
+  }
 }
