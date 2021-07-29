@@ -52,11 +52,17 @@ public class Tondeuse {
     }
   }
 
-  public void avancer() {
+  public void avancer(Pelouse pelouse) {
     switch (orientation){
     case NORD:
-      position = Arrays.asList(this.cordX, this.cordY + 1);
-      break;
+      if (pelouse.cordY == this.cordY){
+        position = Arrays.asList(this.cordX, this.cordY);
+        break;
+      }
+      else {
+        position = Arrays.asList(this.cordX, this.cordY + 1);
+        break;
+      }
     case OUEST:
       if (cordX == 0) {
         position = Arrays.asList(this.cordX, this.cordY);
@@ -67,8 +73,14 @@ public class Tondeuse {
         break;
       }
     case EST:
-      position = Arrays.asList(this.cordX + 1, this.cordY);
-      break;
+      if (pelouse.cordX == this.cordX){
+        position = Arrays.asList(this.cordX, this.cordY);
+        break;
+      }
+      else {
+        position = Arrays.asList(this.cordX + 1, this.cordY);
+        break;
+      }
     case SUD:
       if (cordY == 0) {
         position = Arrays.asList(this.cordX, this.cordY);
