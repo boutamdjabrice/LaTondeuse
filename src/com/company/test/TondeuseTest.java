@@ -1,10 +1,13 @@
 package com.company.test;
 
+import com.company.src.main.Fichier;
 import com.company.src.main.Orientation;
 import com.company.src.main.Pelouse;
 import com.company.src.main.Tondeuse;
 import junit.framework.TestCase;
+import org.junit.Test;
 
+import java.io.File;
 import java.util.Arrays;
 import java.util.List;
 
@@ -58,11 +61,15 @@ public class TondeuseTest extends TestCase {
         assertEquals(Arrays.asList(5,5),tondeuse.getPosition());
     }
 
-    public void OuvrirFichierEstLirePremiereLigne(){
-        Fichier file = new Fichier();
-        String path = "src/test/resources";
-        List<String> ligne = file.OuvrirFichier(path);
+
+    public void testOuvrirFichierEstLirePremiereLigne(){
+        Fichier fichier = new Fichier();
+        String path = "src/com/company/test/ressources/Itineraire.txt";
+        File file = new File(path);
+        String absolutePath = file.getAbsolutePath();
+        List<String> ligne = fichier.OuvrirFichier(absolutePath);
         assertEquals(Arrays.asList(5,5),Arrays.asList(ligne.get(0).split(" ")));
     }
+
 
 }
