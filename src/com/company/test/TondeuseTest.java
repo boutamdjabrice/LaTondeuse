@@ -1,6 +1,7 @@
 package com.company.test;
 
 import com.company.src.Orientation;
+import com.company.src.Pelouse;
 import com.company.src.Tondeuse;
 import junit.framework.TestCase;
 import org.junit.Before;
@@ -14,6 +15,7 @@ import static org.junit.jupiter.api.Assertions.*;
 public class TondeuseTest extends TestCase {
 
     Tondeuse tondeuse = new Tondeuse();
+    Pelouse pelouse = new Pelouse();
 
     public void testOrientationInitialAuNord(){
         tondeuse.setOrientation(Orientation.NORD);
@@ -50,6 +52,16 @@ public class TondeuseTest extends TestCase {
         tondeuse.setCordY(0);
         tondeuse.avancer();
         assertEquals(Arrays.asList(0,0),tondeuse.getPosition());
+    }
+
+    public void testAvancerSurUnBordSuperieurDroit(){
+        pelouse.setCordX(5);
+        pelouse.setCordY(5);
+        tondeuse.setOrientation(Orientation.EST);
+        tondeuse.setCordX(5);
+        tondeuse.setCordY(5);
+        tondeuse.avancer(pelouse);
+        assertEquals(Arrays.asList(5,5),tondeuse.getPosition());
     }
 
 }
