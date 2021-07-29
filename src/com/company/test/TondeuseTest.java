@@ -44,4 +44,12 @@ public class TondeuseTest extends TestCase {
         assertEquals(Arrays.asList(1,1),tondeuse.getPosition());
     }
 
+    public void testAvancerSurUnBord(){
+        tondeuse.setOrientation(Orientation.OUEST);
+        tondeuse.setCordX(0);
+        tondeuse.setCordY(0);
+        tondeuse.avancer();
+        assertEquals(Arrays.asList(0,0),tondeuse.getPosition());
+    }
+
 }
