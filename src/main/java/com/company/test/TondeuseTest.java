@@ -1,6 +1,6 @@
-package com.company.test;
+package main.java.com.company.test;
 
-import com.company.src.main.Fichier;
+
 import com.company.src.main.Orientation;
 import com.company.src.main.Pelouse;
 import com.company.src.main.Tondeuse;
@@ -18,10 +18,12 @@ import java.util.Map;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
+
+
 public class TondeuseTest extends TestCase {
 
     Tondeuse tondeuse = new Tondeuse();
-    Pelouse pelouse = new Pelouse(5,5);
+    Pelouse pelouse = new Pelouse(5, 5);
 
     public void testOrientationInitialAuNord(){
         tondeuse.setOrientation(Orientation.NORD);
