@@ -1,5 +1,3 @@
-package com.company.test;
-
 import com.company.src.main.*;
 import junit.framework.TestCase;
 import static org.assertj.core.api.Assertions.assertThat;

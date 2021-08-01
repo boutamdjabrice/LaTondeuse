@@ -1,6 +1,3 @@
-package com.company.test;
-
-
 import com.company.src.main.Orientation;
 import com.company.src.main.Pelouse;
 import com.company.src.main.Tondeuse;

@@ -9,7 +9,7 @@ import java.util.stream.Collectors;
 public class Main {
 
     public static void main(String[] args) {
-        String path = "src/main/java/com/company/src/main/ressources/Itineraire.txt";
+        String path = "src/main/resources/Itineraire.txt";
         File file = new File(path);
         String absolutePath = file.getAbsolutePath();
         Fichier fichier = new Fichier();

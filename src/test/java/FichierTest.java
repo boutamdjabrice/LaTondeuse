@@ -1,5 +1,3 @@
-package com.company.test;
-
 import com.company.src.main.Fichier;
 
 import junit.framework.TestCase;
@@ -20,7 +18,7 @@ public class FichierTest extends TestCase {
   List<String> lignes;
 
   public void setUp(){
-    String path = "src/main/java/com/company/test/ressources/Itineraire.txt";
+    String path = "src/test/resources/Itineraire.txt";
     File file = new File(path);
     String absolutePath = file.getAbsolutePath();
     lignes = fichier.OuvrirFichier(absolutePath);
@@ -33,7 +31,7 @@ public class FichierTest extends TestCase {
 
   @Test(expected= IOException.class)
   public void testOuvrirFichierEstNeLeTrouvePas(){
-    String path = "src/main/java/com/company/test/ressources/Itineraires.txt";
+    String path = "src/test/resources/Itineraires.txt";
     File file = new File(path);
     String absolutePath = file.getAbsolutePath();
     List<String> ligneFausse = fichier.OuvrirFichier(absolutePath);
@@ -51,7 +49,7 @@ public class FichierTest extends TestCase {
 
   @Test(expected= IOException.class)
   public void testLeFormatDuFichierEstImpaire(){
-    String path = "src/main/java/com/company/test/ressources/ItinerairePaire.txt";
+    String path = "src/test/resources/ItinerairePaire.txt";
     File file = new File(path);
     String absolutePath = file.getAbsolutePath();
     List<String> ligneFausse = fichier.OuvrirFichier(absolutePath);
