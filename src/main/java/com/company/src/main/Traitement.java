@@ -1,10 +1,14 @@
 package com.company.src.main;
 
+import org.apache.log4j.Logger;
+
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Stream;
 
 public class Traitement {
+
+  final static Logger logger = Logger.getLogger(Traitement.class);
 
   public Tondeuse initialisationDeLaTondeuse(String  ligne) {
     List<String> elementSeparer = Arrays.asList(ligne.split(" "));
@@ -23,6 +27,7 @@ public class Traitement {
       orientation = Orientation.EST;
       break;
     }
+    logger.info("La tondeuse est initialisée à la posistion : "+elementSeparer.get(0)+ " " + elementSeparer.get(1)+" "+orientation);
     return new Tondeuse(Integer.parseInt(elementSeparer.get(0)), Integer.parseInt(elementSeparer.get(1)), orientation);
   }
 
@@ -32,12 +37,15 @@ public class Traitement {
       switch (lettre){
       case "D":
         tondeuse.tournerVersLaDroite();
+        logger.info("La tondeuse à tourner vers la droite");
         break;
       case "G":
         tondeuse.tournerVersLaGauche();
+        logger.info("La tondeuse à tourner vers la gauche");
         break;
       case "A":
         tondeuse.avancer(pelouse);
+        logger.info("La tondeuse à avancer");
         break;
       }
     }

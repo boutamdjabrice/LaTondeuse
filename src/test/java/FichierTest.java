@@ -24,7 +24,7 @@ public class FichierTest extends TestCase {
     lignes = fichier.OuvrirFichier(absolutePath);
   }
 
-  public void testOuvrirFichierEstLirePremiereLigne(){
+  public void testOuvrirFichierEtLirePremiereLigne(){
     assertEquals(Arrays.asList(5, 5), Arrays.asList(lignes.get(0).split(" ")).stream().map(Integer::parseInt).collect(
         Collectors.toList()));
   }
@@ -53,7 +53,11 @@ public class FichierTest extends TestCase {
     File file = new File(path);
     String absolutePath = file.getAbsolutePath();
     List<String> ligneFausse = fichier.OuvrirFichier(absolutePath);
-    fichier.testDuFormat(lignes);
+    try {
+      fichier.testDuFormat(ligneFausse);
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
   }
 
 }

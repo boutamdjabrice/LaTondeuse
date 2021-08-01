@@ -1,5 +1,7 @@
 package com.company.src.main;
 
+import org.apache.log4j.Logger;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.nio.file.Files;
@@ -12,6 +14,8 @@ import java.util.stream.Collectors;
 
 public class Fichier {
 
+  final static Logger logger = Logger.getLogger(Fichier.class);
+
   public List<String> OuvrirFichier(String path) {
     List<String> list = new ArrayList<>();
     try (BufferedReader br = Files.newBufferedReader(Paths.get(path))) {
@@ -19,7 +23,7 @@ public class Fichier {
       list = br.lines().collect(Collectors.toList());
 
     } catch (IOException e) {
-      e.printStackTrace();
+      logger.error("Fichier introuvable : " + e);
     }
     return list;
   }
@@ -38,13 +42,8 @@ public class Fichier {
     return map;
   }
 
-  public void testDuFormat(List<String> ligne) {
-    if (ligne.size() % 2 == 0){
-      try {
+  public void testDuFormat(List<String> lignes) throws IOException {
+    if (lignes.size() % 2 == 0)
         throw new IOException("Nombre de ligne paire");
-      } catch (IOException e) {
-        e.printStackTrace();
-      }
-    }
   }
 }
