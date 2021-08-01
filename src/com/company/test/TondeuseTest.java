@@ -12,7 +12,10 @@ import java.io.File;
 import java.io.IOException;
 import java.nio.file.NoSuchFileException;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 
 public class TondeuseTest extends TestCase {
@@ -156,24 +159,4 @@ public class TondeuseTest extends TestCase {
         assertEquals(Arrays.asList(5,5),tondeuse.getPosition());
     }
 
-
-    public void testOuvrirFichierEstLirePremiereLigne(){
-        Fichier fichier = new Fichier();
-        String path = "src/com/company/test/ressources/Itineraire.txt";
-        File file = new File(path);
-        String absolutePath = file.getAbsolutePath();
-        List<String> ligne = fichier.OuvrirFichier(absolutePath);
-        assertEquals(Arrays.asList(5,5),Arrays.asList(ligne.get(0).split(" ")).stream().map(Integer::parseInt).collect(Collectors.toList()));
-    }
-
-    @Test(expected=IOException.class)
-    public void testOuvrirFichierEstNeLeTrouvePas(){
-        Fichier fichier = new Fichier();
-        String path = "src/com/company/test/ressources/Itineraires.txt";
-        File file = new File(path);
-        String absolutePath = file.getAbsolutePath();
-        List<String> ligne = fichier.OuvrirFichier(absolutePath);
-    }
-
-    
 }
