@@ -1,22 +1,11 @@
-package main.java.com.company.test;
+package com.company.test;
 
 
 import com.company.src.main.Orientation;
 import com.company.src.main.Pelouse;
 import com.company.src.main.Tondeuse;
 import junit.framework.TestCase;
-import org.junit.Test;
-import org.junit.jupiter.api.Assertions;
-
-import java.io.File;
-import java.io.IOException;
-import java.nio.file.NoSuchFileException;
 import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.function.Function;
-import java.util.stream.Collectors;
 
 
 
