@@ -101,6 +101,6 @@ public class Tondeuse {
   }
 
   public String toString(){
-    return String.valueOf(this.cordX) + " " + String.valueOf(this.cordY) + " " + this.orientation.toString();
+    return this.cordX + " " + this.cordY + " " + this.orientation.getAbreviation();
   }
 }
