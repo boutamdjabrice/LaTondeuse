@@ -99,4 +99,8 @@ public class Tondeuse {
       }
     }
   }
+
+  public String toString(){
+    return String.valueOf(this.cordX) + " " + String.valueOf(this.cordY) + " " + orientation.toString();
+  }
 }

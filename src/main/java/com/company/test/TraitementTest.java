@@ -27,15 +27,19 @@ public class TraitementTest extends TestCase {
 
   List<String> ligne;
 
-  public void setUp(){
+  /*public void setUp(){
     String path = "src/main/java/com/company/test/ressources/Itineraire.txt";
     File file = new File(path);
     String absolutePath = file.getAbsolutePath();
     ligne = fichier.OuvrirFichier(absolutePath);
-  }
+  }*/
 
   public void testInitialisationDeLaTondeuseDepuisLeFichier(){
-    assertThat(new Tondeuse(1, 2, Orientation.NORD)).isEqualToIgnoringGivenFields(traitement.initialisationDeLaTondeuse("1 2 N"));
+    assertThat(new Tondeuse(1, 2, Orientation.NORD)).isEqualToIgnoringGivenFields(traitement.initialisationDeLaTondeuse("1 2 N"), "position");
+  }
+
+  public void testTraitementDeLaSerieInstructionPourLaTondeuse(){
+    assertEquals(new Tondeuse(1,3,Orientation.NORD).toString(), traitement.serieInstruction("GAGAGAGAA"));
   }
 
 }
