@@ -28,16 +28,16 @@ public class Tondeuse {
   public void tournerVersLaGauche() {
     switch (orientation){
     case NORD:
-      orientation = Orientation.OUEST;
+      this.orientation = Orientation.OUEST;
       break;
     case OUEST:
-      orientation = Orientation.SUD;
+      this.orientation = Orientation.SUD;
       break;
     case SUD:
-      orientation = Orientation.EST;
+      this.orientation = Orientation.EST;
       break;
     case EST:
-      orientation = Orientation.NORD;
+      this.orientation = Orientation.NORD;
       break;
     }
   }
@@ -45,16 +45,16 @@ public class Tondeuse {
   public void tournerVersLaDroite() {
     switch (orientation){
     case NORD:
-      orientation = Orientation.EST;
+      this.orientation = Orientation.EST;
       break;
     case EST:
-      orientation = Orientation.SUD;
+      this.orientation = Orientation.SUD;
       break;
     case SUD:
-      orientation = Orientation.OUEST;
+      this.orientation = Orientation.OUEST;
       break;
     case OUEST:
-      orientation = Orientation.NORD;
+      this.orientation = Orientation.NORD;
       break;
     }
   }
@@ -63,44 +63,44 @@ public class Tondeuse {
     switch (orientation){
     case NORD:
       if (pelouse.cordY == this.cordY){
-        position = Arrays.asList(this.cordX, this.cordY);
+        this.position = Arrays.asList(this.cordX, this.cordY);
         break;
       }
       else {
-        position = Arrays.asList(this.cordX, this.cordY + 1);
+        this.position = Arrays.asList(this.cordX, this.cordY = this.cordY + 1);
         break;
       }
     case OUEST:
       if (cordX == 0) {
-        position = Arrays.asList(this.cordX, this.cordY);
+        this.position = Arrays.asList(this.cordX, this.cordY);
         break;
       }
       else{
-        position = Arrays.asList(this.cordX - 1, this.cordY);
+        this.position = Arrays.asList(this.cordX = this.cordX - 1, this.cordY);
         break;
       }
     case EST:
       if (pelouse.cordX == this.cordX){
-        position = Arrays.asList(this.cordX, this.cordY);
+        this.position = Arrays.asList(this.cordX, this.cordY);
         break;
       }
       else {
-        position = Arrays.asList(this.cordX + 1, this.cordY);
+        this.position = Arrays.asList(this.cordX = this.cordX + 1, this.cordY);
         break;
       }
     case SUD:
       if (cordY == 0) {
-        position = Arrays.asList(this.cordX, this.cordY);
+        this.position = Arrays.asList(this.cordX, this.cordY);
         break;
       }
       else {
-        position = Arrays.asList(this.cordX, this.cordY - 1);
+        this.position = Arrays.asList(this.cordX, this.cordY = this.cordY - 1);
         break;
       }
     }
   }
 
   public String toString(){
-    return String.valueOf(this.cordX) + " " + String.valueOf(this.cordY) + " " + orientation.toString();
+    return String.valueOf(this.cordX) + " " + String.valueOf(this.cordY) + " " + this.orientation.toString();
   }
 }

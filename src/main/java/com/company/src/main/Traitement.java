@@ -2,6 +2,7 @@ package com.company.src.main;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Stream;
 
 public class Traitement {
 
@@ -24,4 +25,23 @@ public class Traitement {
     }
     return new Tondeuse(Integer.parseInt(elementSeparer.get(0)), Integer.parseInt(elementSeparer.get(1)), orientation);
   }
+
+  public String serieInstruction(Tondeuse tondeuse, String serieInstruction, Pelouse pelouse) {
+    String[] list = serieInstruction.split("(?!^)");
+    for (String lettre: list) {
+      switch (lettre){
+      case "D":
+        tondeuse.tournerVersLaDroite();
+        break;
+      case "G":
+        tondeuse.tournerVersLaGauche();
+        break;
+      case "A":
+        tondeuse.avancer(pelouse);
+        break;
+      }
+    }
+      return tondeuse.toString();
+    }
+
 }
