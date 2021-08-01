@@ -20,6 +20,12 @@ public class Tondeuse {
   public Tondeuse() {
   }
 
+  public Tondeuse(int cordX, int cordY, Orientation orientation) {
+    this.cordX = cordX;
+    this.cordY = cordY;
+    this.orientation = orientation;
+  }
+
   public void tournerVersLaGauche() {
     switch (orientation){
     case NORD:

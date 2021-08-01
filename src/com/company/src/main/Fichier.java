@@ -37,4 +37,14 @@ public class Fichier {
     }
     return map;
   }
+
+  public void testDuFormat(List<String> ligne) {
+    if (ligne.size() % 2 == 0){
+      try {
+        throw new IOException("Nombre de ligne paire");
+      } catch (IOException e) {
+        e.printStackTrace();
+      }
+    }
+  }
 }
